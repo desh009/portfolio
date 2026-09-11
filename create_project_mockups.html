@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project UI Mockups</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #0a0a0a;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 40px 20px;
+        }
+        
+        .phone {
+            width: 360px;
+            height: 640px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 30px;
+            padding: 20px;
+            margin: 20px;
+            position: relative;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+        }
+        
+        .screen {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            border-radius: 20px;
+            padding: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .status-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            font-size: 14px;
+            font-weight: 600;
+        }
+        
+        .app-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .app-title {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            background: linear-gradient(45deg, #64B5F6, #42A5F5);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .app-subtitle {
+            font-size: 16px;
+            opacity: 0.8;
+            font-weight: 400;
+        }
+        
+        .content-area {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .feature-card {
+            background: rgba(255,255,255,0.1);
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 15px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+        
+        .feature-title {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        
+        .feature-desc {
+            font-size: 14px;
+            opacity: 0.7;
+            line-height: 1.4;
+        }
+        
+        .bottom-nav {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            right: 20px;
+            height: 60px;
+            background: rgba(255,255,255,0.15);
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+        
+        .nav-item {
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            background: rgba(255,255,255,0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+        }
+        
+        .nav-item.active {
+            background: #64B5F6;
+        }
+        
+        /* E-Commerce Theme */
+        .ecommerce .screen {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        
+        .ecommerce .app-title {
+            background: linear-gradient(45deg, #FF6B6B, #FFE66D);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        /* Food Delivery Theme */
+        .food .screen {
+            background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%);
+        }
+        
+        .food .app-title {
+            background: linear-gradient(45deg, #FF6B35, #F7931E);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        /* Taxi Theme */
+        .taxi .screen {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+        }
+        
+        .taxi .app-title {
+            background: linear-gradient(45deg, #36D1DC, #5B86E5);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .action-btn {
+            background: linear-gradient(45deg, #64B5F6, #42A5F5);
+            border: none;
+            border-radius: 25px;
+            padding: 15px 30px;
+            color: white;
+            font-weight: 600;
+            font-size: 16px;
+            margin-top: 20px;
+            cursor: pointer;
+        }
+        
+        .grid-items {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .grid-item {
+            aspect-ratio: 1;
+            background: rgba(255,255,255,0.1);
+            border-radius: 15px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 15px;
+        }
+        
+        .item-icon {
+            font-size: 30px;
+            margin-bottom: 8px;
+        }
+        
+        .item-name {
+            font-size: 12px;
+            font-weight: 500;
+        }
+        
+        h1 {
+            color: white;
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 32px;
+        }
+        
+        .instructions {
+            max-width: 800px;
+            background: rgba(255,255,255,0.05);
+            padding: 30px;
+            border-radius: 20px;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+        
+        .mockups-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+            gap: 40px;
+            max-width: 1200px;
+        }
+    </style>
+</head>
+<body>
+    <h1>🎨 Professional Project UI Mockups</h1>
+    
+    <div class="instructions">
+        <h2 style="margin-bottom: 20px;">📸 Take Screenshots</h2>
+        <p style="margin-bottom: 15px;">Right-click on each phone mockup → "Save Image As" → Save to:</p>
+        <code style="background: rgba(255,255,255,0.1); padding: 10px; border-radius: 8px; display: block;">
+            C:\flutteryyy\portfiliodf\assets\images\projects\
+        </code>
+        <p style="margin-top: 15px; font-size: 14px; opacity: 0.8;">
+            Name them: ecommerce_home.png, food_home.png, taxi_home.png etc.
+        </p>
+    </div>
+    
+    <div class="mockups-grid">
+        <!-- E-Commerce App -->
+        <div class="phone ecommerce">
+            <div class="screen">
+                <div class="status-bar">
+                    <span>9:41 AM</span>
+                    <span>🔋 100%</span>
+                </div>
+                
+                <div class="app-header">
+                    <div class="app-title">ShopEasy</div>
+                    <div class="app-subtitle">Your favorite shopping app</div>
+                </div>
+                
+                <div class="content-area">
+                    <div class="feature-card">
+                        <div class="feature-title">🛍️ Browse Products</div>
+                        <div class="feature-desc">Discover thousands of products with advanced filters and search</div>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-title">🛒 Smart Cart</div>
+                        <div class="feature-desc">Save items, apply coupons, and checkout seamlessly</div>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-title">📦 Order Tracking</div>
+                        <div class="feature-desc">Real-time updates from order to delivery</div>
+                    </div>
+                    
+                    <button class="action-btn">Start Shopping</button>
+                </div>
+                
+                <div class="bottom-nav">
+                    <div class="nav-item active">🏠</div>
+                    <div class="nav-item">🔍</div>
+                    <div class="nav-item">🛒</div>
+                    <div class="nav-item">👤</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Food Delivery App -->
+        <div class="phone food">
+            <div class="screen">
+                <div class="status-bar">
+                    <span>2:15 PM</span>
+                    <span>📶 🔋 95%</span>
+                </div>
+                
+                <div class="app-header">
+                    <div class="app-title">FoodieExpress</div>
+                    <div class="app-subtitle">Delicious food at your doorstep</div>
+                </div>
+                
+                <div class="content-area">
+                    <div class="grid-items">
+                        <div class="grid-item">
+                            <div class="item-icon">🍕</div>
+                            <div class="item-name">Pizza</div>
+                        </div>
+                        <div class="grid-item">
+                            <div class="item-icon">🍔</div>
+                            <div class="item-name">Burgers</div>
+                        </div>
+                        <div class="grid-item">
+                            <div class="item-icon">🍜</div>
+                            <div class="item-name">Asian</div>
+                        </div>
+                        <div class="grid-item">
+                            <div class="item-icon">🥗</div>
+                            <div class="item-name">Healthy</div>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-card" style="margin-top: 20px;">
+                        <div class="feature-title">🚀 Fast Delivery</div>
+                        <div class="feature-desc">Get your food delivered in 30 minutes or less</div>
+                    </div>
+                    
+                    <button class="action-btn">Order Now</button>
+                </div>
+                
+                <div class="bottom-nav">
+                    <div class="nav-item active">🏠</div>
+                    <div class="nav-item">🔍</div>
+                    <div class="nav-item">🛒</div>
+                    <div class="nav-item">❤️</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Taxi Booking App -->
+        <div class="phone taxi">
+            <div class="screen">
+                <div class="status-bar">
+                    <span>7:30 PM</span>
+                    <span>📍 🔋 88%</span>
+                </div>
+                
+                <div class="app-header">
+                    <div class="app-title">RideNow</div>
+                    <div class="app-subtitle">Your reliable ride partner</div>
+                </div>
+                
+                <div class="content-area">
+                    <div class="feature-card">
+                        <div class="feature-title">🗺️ Live Tracking</div>
+                        <div class="feature-desc">Real-time GPS tracking for your safety and convenience</div>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-title">💰 Fair Pricing</div>
+                        <div class="feature-desc">Transparent pricing with no hidden charges</div>
+                    </div>
+                    
+                    <div class="grid-items">
+                        <div class="grid-item">
+                            <div class="item-icon">🚗</div>
+                            <div class="item-name">Economy</div>
+                        </div>
+                        <div class="grid-item">
+                            <div class="item-icon">🚙</div>
+                            <div class="item-name">Premium</div>
+                        </div>
+                    </div>
+                    
+                    <button class="action-btn">Book Ride</button>
+                </div>
+                
+                <div class="bottom-nav">
+                    <div class="nav-item active">🏠</div>
+                    <div class="nav-item">🗺️</div>
+                    <div class="nav-item">📋</div>
+                    <div class="nav-item">👤</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div style="margin-top: 60px; text-align: center; opacity: 0.7;">
+        <p>💡 Tip: Right-click each phone → Save Image As → Name properly</p>
+        <p>🎯 Then restart your Flutter app to see these beautiful mockups!</p>
+    </div>
+</body>
+</html>
