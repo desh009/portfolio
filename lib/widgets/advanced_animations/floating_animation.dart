@@ -13,9 +13,11 @@ class FloatingAnimation extends StatefulWidget {
     this.distance = 10.0,
   });
 
+
   @override
   State<FloatingAnimation> createState() => _FloatingAnimationState();
 }
+
 
 class _FloatingAnimationState extends State<FloatingAnimation>
     with SingleTickerProviderStateMixin {
